@@ -1,0 +1,11 @@
+C:\Users\bshod\Documents\HrethricBot\bin\Debug\netcoreapp2.1\HrethricBot.deps.json
+C:\Users\bshod\Documents\HrethricBot\bin\Debug\netcoreapp2.1\HrethricBot.runtimeconfig.json
+C:\Users\bshod\Documents\HrethricBot\bin\Debug\netcoreapp2.1\HrethricBot.runtimeconfig.dev.json
+C:\Users\bshod\Documents\HrethricBot\bin\Debug\netcoreapp2.1\HrethricBot.dll
+C:\Users\bshod\Documents\HrethricBot\bin\Debug\netcoreapp2.1\HrethricBot.pdb
+C:\Users\bshod\Documents\HrethricBot\obj\Debug\netcoreapp2.1\HrethricBot.csprojAssemblyReference.cache
+C:\Users\bshod\Documents\HrethricBot\obj\Debug\netcoreapp2.1\HrethricBot.csproj.CoreCompileInputs.cache
+C:\Users\bshod\Documents\HrethricBot\obj\Debug\netcoreapp2.1\HrethricBot.AssemblyInfoInputs.cache
+C:\Users\bshod\Documents\HrethricBot\obj\Debug\netcoreapp2.1\HrethricBot.AssemblyInfo.cs
+C:\Users\bshod\Documents\HrethricBot\obj\Debug\netcoreapp2.1\HrethricBot.dll
+C:\Users\bshod\Documents\HrethricBot\obj\Debug\netcoreapp2.1\HrethricBot.pdb
