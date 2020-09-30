@@ -75,7 +75,7 @@ namespace HrethricBot
                     {
                         var channelToSendMessage = server.Channels.First(x => x.Name.Equals("complaining-about-hrethrics-complaining"));
                         await server.GetTextChannel(channelToSendMessage.Id)
-                                    .SendMessageAsync($"Someone may have mentioned Hrethric (Which he might complain about) in: ${message.Channel.Name}");
+                                    .SendMessageAsync($"Someone may have mentioned Hrethric (Which he might complain about) in: #{message.Channel.Name}");
                     }
                 }
             }
