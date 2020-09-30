@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Discord;
@@ -55,37 +57,25 @@ namespace HrethricBot
             if (message.Author.Username.Equals("Wulf"))
             {
                 var connectedServers = _client.Guilds;
-                foreach (var server in connectedServers)
-                {
-                    if (server.Name.Equals("Thunder Billies"))
-                    {
-                        var channels = server.Channels;
-                        foreach (var channel in channels)
-                        {
-                            if (channel.Name.Equals("complaining-about-hrethrics-complaining"))
-                            {
-                                await server.GetTextChannel(channel.Id).SendMessageAsync($"Hrethric may have complained in channel: #{message.Channel.Name}!");
-                            }
-                        }
-                    }
-                }
+                var serverToSendMessage = connectedServers.First(x => x.Name.Equals("Thunder Billies"));
+                var channelToSendMessage = serverToSendMessage.Channels.First(x => x.Name.Equals("complaining-about-hrethrics-complaining"));
+
+                await serverToSendMessage.GetTextChannel(channelToSendMessage.Id)
+                                         .SendMessageAsync($"Hrethric may have complained in channel: #{message.Channel.Name}");
+
             }
             if (message.Content.ToLower().Contains("hrethric") && !message.Channel.Name.Contains("hrethric"))
             {
                 var connectedServers = _client.Guilds;
+;
                 foreach (var server in connectedServers)
                 {
                     if (server.Name.Equals("Thunder Billies") ||
                         server.Name.Equals("schmeebsisawesome"))
                     {
-                        var channels = server.Channels;
-                        foreach (var channel in channels)
-                        {
-                            if (channel.Name.Equals("complaining-about-hrethrics-complaining"))
-                            {
-                                await server.GetTextChannel(channel.Id).SendMessageAsync($"Someone may have mentioned Hrethric (Which he might complain about) in: #{message.Channel.Name}!");
-                            }
-                        }
+                        var channelToSendMessage = server.Channels.First(x => x.Name.Equals("complaining-about-hrethrics-complaining"));
+                        await server.GetTextChannel(channelToSendMessage.Id)
+                                    .SendMessageAsync($"Someone may have mentioned Hrethric (Which he might complain about) in: ${message.Channel.Name}");
                     }
                 }
             }
