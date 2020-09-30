@@ -19,18 +19,29 @@ namespace HrethricBot
 
         public async Task MainAsync()
         {
+
             _client = new DiscordSocketClient();
+            _config = BuildConfig();
 
             _client.Log += Log;
 
             _client.MessageReceived += MessageReceived;
 
-            await _client.LoginAsync(TokenType.Bot, "NzYwNjg0MjczNTMxMDkzMDQ1.X3Pobw.103yR5hOFgWJAb1pbUyNxxzJnl4");
+            await _client.LoginAsync(TokenType.Bot, _config["token"]);
 
             await _client.StartAsync();
 
             await Task.Delay(-1);
 
+        }
+
+        private IConfiguration BuildConfig()
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("config.json")
+                .Build();
+            return builder;
         }
 
         private Task Log(LogMessage msg)
@@ -77,7 +88,6 @@ namespace HrethricBot
                         }
                     }
                 }
-
             }
         }
     }
